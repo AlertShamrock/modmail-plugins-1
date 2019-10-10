@@ -70,4 +70,4 @@ class Appeal(commands.Cog):
         await ctx.send("Your appeal is now pending!")
                         
 def setup(bot):
-    bot.add_cog(Report(bot))
+    bot.add_cog(Appeal(bot))

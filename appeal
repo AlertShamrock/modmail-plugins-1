@@ -15,13 +15,13 @@ class Appeal(commands.Cog):
 
     @commands.command(aliases=["achannel"])
     @checks.has_permissions(PermissionLevel.MODERATOR)
-    async def reportchannel(self, ctx, channel: discord.TextChannel):
+    async def appealchannel(self, ctx, channel: discord.TextChannel):
         """Set the Appeal Channel"""
         await self.db.find_one_and_update(
                 {"_id": "config"}, {"$set": {"appeal_channel": channel.id}}, upsert=True
             )
         embed = discord.Embed(
-                color=discord.Color.blue())
+                color=discord.Color.green())
         embed.timestamp = datetime.datetime.utcnow()
         embed.add_field(
             name="Set Channel", value=f"Successfully Set the Appeal Channel to {channel.mention}",inline=False
@@ -36,7 +36,7 @@ class Appeal(commands.Cog):
                 {"_id": "config"}, {"$set": {"appeal_mention": mention}}, upsert=True
             )
         embed = discord.Embed(
-                color=discord.Color.blue())
+                color=discord.Color.green())
         embed.timestamp = datetime.datetime.utcnow()
         embed.add_field(
             name="Changed Mention", value=f"Successfully Changed the appeal mention to {mention}",inline=False
@@ -49,10 +49,10 @@ class Appeal(commands.Cog):
     async def appeal(self, ctx, user: discord.Member, *, reason):
         """appeal blacklist"""
         config = await self.db.find_one({"_id": "config"})
-        report_channel = config["appeal_channel"]
+        appeal_channel = config["appeal_channel"]
         setchannel = discord.utils.get(ctx.guild.channels, id=int(appeal_channel))
         try:
-            report_mention = config["appeal_mention"]
+            appeal_mention = config["appeal_mention"]
             await setchannel.send(appeal_mention)
         except:
             pass
@@ -62,7 +62,7 @@ class Appeal(commands.Cog):
         embed.timestamp = datetime.datetime.utcnow()
         embed.set_author("Appeal Blacklist system")
         embed.add_field(
-                name="Reported By:", value=f"{ctx.author.mention} | ID: {ctx.author.id}",inline=False)
+                name="Request by", value=f"{ctx.author.mention} | ID: {ctx.author.id}",inline=False)
         embed.add_field(
                 name="Reason", value=reason,inline=False)
 

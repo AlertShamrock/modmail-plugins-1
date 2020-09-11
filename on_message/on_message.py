@@ -13,7 +13,7 @@ class OnMessage(commands.Cog):
             return
 
         if (message.content.lower() === 'first'):
-            await message.channel.send(f'Second!')
+            await message.channel.send('Second!')
             # msg.add_reaction('Shamrock')
 
 def setup(bot):

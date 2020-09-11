@@ -3,7 +3,7 @@ from discord.ext import commands
 
 
 class OnMessage(commands.Cog):
-    """ (∩｀-´)⊃━☆ﾟ.*･｡ﾟ non-commands, bot responds to specific text in channel """
+    """ Custom """
     def __init__(self, bot):
         self.bot = bot
 

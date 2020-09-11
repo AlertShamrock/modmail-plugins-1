@@ -12,7 +12,7 @@ class OnMessage(commands.Cog):
         if message.author.bot:
             return
         
-        if message.content.startwith("first"):
+        if message.content.startwith('first'):
         
             await message.channel.send('Second!')
             # msg.add_reaction('Shamrock')

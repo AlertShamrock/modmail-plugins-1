@@ -11,7 +11,7 @@ class OnMessage(commands.Cog):
     async def on_message(self, message):
         if message.author.bot:
             return
-var msg = message.content.toLowerCase()
+         msg = message.content.toLowerCase()
         if message.content.startwith("first"):
         
             await message.channel.send('Second!')

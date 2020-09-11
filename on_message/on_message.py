@@ -32,9 +32,8 @@ class OnMessage(commands.Cog):
         if message.author.bot:
             return
 
-        if message.content.startswith('First'):
-            iam = 'Second!'  # upload the BOT emoji as :bot_tag: in your Discord guild
-            await message.channel.send(f', {iam}')
+        if (message.content.lower() === 'first'):
+            await message.channel.send(f'Second!')
             # msg.add_reaction('Shamrock')
 
 def setup(bot):

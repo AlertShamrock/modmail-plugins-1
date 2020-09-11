@@ -11,8 +11,9 @@ class OnMessage(commands.Cog):
     async def on_message(self, message):
         if message.author.bot:
             return
-
-        if (message.content.lower() === 'first'):
+var msg = message.content.toLowerCase()
+        if message.content.startwith("first"):
+        
             await message.channel.send('Second!')
             # msg.add_reaction('Shamrock')
 

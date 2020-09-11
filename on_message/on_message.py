@@ -14,7 +14,7 @@ class OnMessage(commands.Cog):
         
         if message.content.startwith('first'):
         
-            await message.channel.send('Second!')
+            await message.channel.send(f'Second!')
             # msg.add_reaction('Shamrock')
 
 def setup(bot):

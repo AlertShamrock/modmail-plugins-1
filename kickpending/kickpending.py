@@ -16,7 +16,7 @@ s = sched.scheduler(time.time, time.sleep)
 def banpending(sc): 
         role = ctx.guild.get_role(754859445766586419)
         for x in role.members:
-            await x.ban(reason="Enemy")
+             x.ban(reason="Enemy")
             await ctx.send("Kicked all members with role Pending")
         
         config = await self.db.find_one({"_id": "config"})

@@ -18,6 +18,7 @@ class ChangeStatus(commands.Cog):
         await self.bot.change_presence(activity=discord.Watching(name=f"{self.third}"))
         await asyncio.sleep(10)
 
+          self.start_the_status.start()
     @commands.group(name="statusy", invoke_without_command=True)
     async def status_group(self, ctx):
         embed = discord.Embed(

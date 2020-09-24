@@ -7,8 +7,8 @@ class ChangeStatus(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.first = "Test"
-        self.second = None
-        self.third = None
+        self.second = "Test"
+        self.third = "Test"
 
     @tasks.loop(seconds=10)
         await self.bot.change_presence(activity=discord.Game(name=f"{self.first}"))

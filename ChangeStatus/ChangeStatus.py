@@ -9,7 +9,7 @@ class ChangeStatus(commands.Cog):
  
 
     @tasks.loop(seconds=10)
-        await self.bot.change_presence(activity=discord.Game(name=f"Test"))
+        await self.bot.change_presence(activity=discord.Game(name="Test"))
         await asyncio.sleep(10)
         await self.bot.change_presence(activity=discord.Game(name=f"Test"))
         await asyncio.sleep(10)

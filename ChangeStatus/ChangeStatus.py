@@ -6,7 +6,7 @@ import asyncio
 class ChangeStatus(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.first = None
+        self.first = "Test"
         self.second = None
         self.third = None
 

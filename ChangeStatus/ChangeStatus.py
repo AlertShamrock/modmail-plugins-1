@@ -15,7 +15,7 @@ class ChangeStatus(commands.Cog):
         await asyncio.sleep(10)
         await self.bot.change_presence(activity=discord.Game(name=f"{self.second}"))
         await asyncio.sleep(10)
-        await self.bot.change_presence(activity=discord.Listen(name=f"{self.third}"))
+        await self.bot.change_presence(activity=discord.listening(name=f"{self.third}"))
         await asyncio.sleep(10)
 
     @commands.group(name="statusy", invoke_without_command=True)

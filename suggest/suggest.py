@@ -59,16 +59,16 @@ class Suggest(commands.Cog):
                         int(config["suggestion-channel"]["channel"])
                     )
                     
-                    embed = discord.Embed(title=suggestion, color=0x59E9FF)
+                    embed = discord.Embed(title=suggestion, color=self.bot.main_color)
                     embed.set_author(
                         name=f"Suggestion by {ctx.author}:", icon_url=ctx.author.avatar_url
                     )
                     print(4)
                     m = await suggestion_channel.send(embed=embed)
                     print(5)
-                    await m.add_reaction("<:Agree:>")
+                    await m.add_reaction("<:Agree:758793043645693952>")
                     print(6)
-                    await m.add_reaction("<:Disagree:>")
+                    await m.add_reaction("<:Disagree:758792890007945276>")
 
     @commands.command(aliases=["ssc"])
     @checks.has_permissions(PermissionLevel.ADMIN)
@@ -87,7 +87,7 @@ class Suggest(commands.Cog):
             upsert=True,
         )
         embed = discord.Embed(
-            title=f"Set suggestion channel to #{channel}.", color=0x4DFF73
+            title=f"Set suggestion channel to #{channel}.", color=self.bot.main_color
         )
         embed.set_author(name="Success!")
         embed.set_footer(text="Task succeeded successfully.")
@@ -104,7 +104,7 @@ class Suggest(commands.Cog):
         embed = discord.Embed(
             title=f"The suggestion channel is: #{suggestion_channel}",
             description="To change it, use [p]setsuggestchannel.",
-            color=0x4DFF73,
+            color=self.bot.main_color,
         )
         await ctx.send(embed=embed)
 

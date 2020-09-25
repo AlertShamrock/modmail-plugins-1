@@ -14,6 +14,8 @@ class OnMessage(commands.Cog):
         
         if (message.content.lower().startswith("first")):
             await message.channel.send('Second!')
+        elif (message.content.lower().find("help")):
+            await message.channel.send('Hi!')
         
 
 def setup(bot):

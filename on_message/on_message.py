@@ -14,7 +14,8 @@ class OnMessage(commands.Cog):
         
         if (message.content.lower().startswith("first")):
             await message.channel.send('Second!')
-       
+            elif (message.content.lower().startswith("help")):
+                await message.channel.send('Read #📞-support!')
 
 def setup(bot):
     bot.add_cog(OnMessage(bot))

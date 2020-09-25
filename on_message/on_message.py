@@ -8,11 +8,14 @@ class OnMessage(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, message.lower()):
+    async def on_message(self, message):
         if message.author.bot:
             return
         
         if (message.content.startswith("first")):
+        
+            await message.channel.send('Second!')
+        elseif (message.content.startswith("First")):
         
             await message.channel.send('Second!')
             # msg.add_reaction('Shamrock')

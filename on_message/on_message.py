@@ -17,7 +17,7 @@ class OnMessage(commands.Cog):
         elif ('help' in message.content.lower()):
                 await message.channel.send('Read <#660219603212959747> !')
         elif ('discord.gg' in message.content.lower()):
-                message.delete()
+                await message.delete()
 
 def setup(bot):
     bot.add_cog(OnMessage(bot))

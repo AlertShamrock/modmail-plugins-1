@@ -16,8 +16,6 @@ class OnMessage(commands.Cog):
             await message.channel.send('Second!')
         elif ('help' in message.content.lower()):
                 await message.channel.send('Read <#660219603212959747> !')
-        elif ('discord.gg' in message.content.lower()):
-            await message.channel.send('NO LINKS!')
 
 def setup(bot):
     bot.add_cog(OnMessage(bot))

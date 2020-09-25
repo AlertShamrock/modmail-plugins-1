@@ -14,7 +14,7 @@ class OnMessage(commands.Cog):
         
         if (message.content.lower().startswith("first")):
             await message.channel.send('Second!')
-        elif message.content.lower().find("help"):
+        elif message.content.lower().includes("help"):
                 await message.channel.send('Read <#660219603212959747> !')
 
 def setup(bot):

@@ -14,7 +14,7 @@ class OnMessage(commands.Cog):
         
         if (message.content.lower().startswith("first")):
             await message.channel.send('Second!')
-        elseif (message.content.lower() == "help"):
+        elif (message.content.lower() == "help"):
             await message.channel.send('Read <#660219603212959747>!')
         
 

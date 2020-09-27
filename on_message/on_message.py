@@ -17,7 +17,7 @@ class OnMessage(commands.Cog):
         elif ('help' in message.content.lower()):
                 await message.channel.send('Read <#660219603212959747> !')
         elif ('test' in message.content.lower()):
-                message = await ctx.send("hello")
+                message = await message.channel.send('Read <#660219603212959747> !') 
                 await message.edit(content="newcontent") 
 
 def setup(bot):

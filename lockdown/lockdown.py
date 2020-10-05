@@ -23,7 +23,8 @@
             if overwrites_everyone.send_messages == False:
                 await self.bot.say("🔒 Channel is already locked down. Use `.unlock` to unlock.")
                 return
-            overwrites_everyone.send_messages = False
+              
+          overwrites_everyone.send_messages = False
             await self.bot.edit_channel_permissions(ctx.message.channel, ctx.guild.default_role, overwrites_everyone)
             await self.bot.say("🔒 Channel locked.")
             msg = "🔒 **Soft-lock**: {0} by {1} | {2}#{3}".format(ctx.message.channel.mention, ctx.message.author.mention, ctx.message.author.name, ctx.message.author.discriminator)

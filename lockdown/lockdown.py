@@ -1,3 +1,6 @@
+  import discord
+from discord.ext import commands
+  
   async def lockdown(self, ctx):
        """Lock message sending in the channel. Staff only."""
        try:

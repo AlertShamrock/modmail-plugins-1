@@ -20,7 +20,7 @@ class Lockdown:
                 await self.bot.say("🔒 Channel is already locked down. Use `.unlock` to unlock.")
                 return
             overwrites_everyone.send_messages = False
-            await self.bot.edit_channel_permissions(752596773200986172, ctx.guild.default_role, overwrites_Verfied)
+            await overwrites_everyone.view_channel = false
             await self.bot.say("🔒 Channel locked down. Only staff members may speak. Do not bring the topic to other channels or risk disciplinary actions.")
             msg = "🔒 **Lockdown**: {0} by {1} | {2}#{3}".format(ctx.message.channel.mention, ctx.message.author.mention, ctx.message.author.name, ctx.message.author.discriminator)
             await self.bot.send_message(self.bot.modlogs_channel, msg)

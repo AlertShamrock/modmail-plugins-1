@@ -2,7 +2,7 @@
 import discord
 from discord.ext import commands
 
-class Lockdown:
+class Lockdown(commands.Cog):
     """
     Channel lockdown commands.
     """

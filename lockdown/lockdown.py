@@ -8,10 +8,9 @@ class Lockdown(commands.Cog):
     """
     def __init__(self, bot):
         self.bot = bot
-        print('Addon "{}" loaded'.format(self.__class__.__name__))
 
     @commands.has_permissions(manage_messages=True)
-    @commands.command(pass_context=True, name="lockdown")
+    @commands.command(name="lockdown")
     async def lockdown(self, ctx):
        """Lock message sending in the channel. Staff only."""
        try:
@@ -27,25 +26,9 @@ class Lockdown(commands.Cog):
        except discord.errors.Forbidden:
             await self.bot.say("💢 I don't have permission to do this.")
 
-    @commands.has_permissions(manage_messages=True)
-    @commands.command(pass_context=True, name="softlock")
-    async def softlock(self, ctx):
-       """Lock message sending in the channel, without the "disciplinary action" note. Staff only."""
-       try:
-            overwrites_everyone = ctx.message.channel.overwrites_for(ctx.guild.default_role)
-            if overwrites_everyone.send_messages == False:
-                await self.bot.say("🔒 Channel is already locked down. Use `.unlock` to unlock.")
-                return
-            overwrites_everyone.send_messages = False
-            await self.bot.edit_channel_permissions(ctx.message.channel, ctx.guild.default_role, overwrites_everyone)
-            await self.bot.say("🔒 Channel locked.")
-            msg = "🔒 **Soft-lock**: {0} by {1} | {2}#{3}".format(ctx.message.channel.mention, ctx.message.author.mention, ctx.message.author.name, ctx.message.author.discriminator)
-            await self.bot.send_message(self.bot.modlogs_channel, msg)
-       except discord.errors.Forbidden:
-            await self.bot.say("💢 I don't have permission to do this.")
 
     @commands.has_permissions(manage_messages=True)
-    @commands.command(pass_context=True, name="unlock")
+    @commands.command(name="unlock")
     async def unlock(self, ctx):
        """Unlock message sending in the channel. Staff only."""
        try:
